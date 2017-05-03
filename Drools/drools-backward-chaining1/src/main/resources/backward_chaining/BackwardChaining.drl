@@ -1,0 +1,34 @@
+//created on: Apr 26, 2017
+package com.sample
+
+import com.sample.model.Location;
+
+
+
+//declare any global variables here
+
+
+query isContainedIn( String x, String y ) 
+    Location( x, y; )
+    or 
+    ( Location( z, y; ) and isContainedIn( x, z; ) )
+end
+
+
+rule "go" salience 10
+
+  when
+    $s : String( )
+  then
+    System.out.println( $s );
+end
+
+rule "go1"
+
+  when
+    String( this == "go1" )
+    isContainedIn("key", "envelop"; )
+  then
+    System.out.println( "key is in the envelop" );
+end
+

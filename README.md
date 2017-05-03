@@ -1,2 +1,2 @@
 # JCG_examples
-Java code geeks exmaples
+Java code geeks examples

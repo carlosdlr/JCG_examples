@@ -1,0 +1,16 @@
+package com.sample
+
+import com.sample.model.Person
+
+
+/**
+When this rule matched, will be fired and a FactHandle object will be returned    
+*/
+rule "facthandletest"
+
+    when
+        Person( id == 12467, name == "carlos" )
+    then
+         System.out.println( "Fact handle Example" );
+
+end
